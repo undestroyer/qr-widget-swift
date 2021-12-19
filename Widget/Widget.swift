@@ -8,18 +8,15 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import CoreImage.CIFilterBuiltins
 
 struct Provider: IntentTimelineProvider {
-    let context = CIContext()
-    let filter = CIFilter.qrCodeGenerator()
     
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), image: UIImage(systemName: "qrcode")!, configuration: ConfigurationIntent())
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), image: generateQRCode(), configuration: configuration)
+        let entry = SimpleEntry(date: Date(), image: qrCode, configuration: configuration)
         completion(entry)
     }
 
@@ -30,7 +27,7 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, image: generateQRCode(), configuration: configuration)
+            let entry = SimpleEntry(date: entryDate, image: qrCode, configuration: configuration)
             entries.append(entry)
         }
 
@@ -38,22 +35,7 @@ struct Provider: IntentTimelineProvider {
         completion(timeline)
     }
     
-    func generateQRCode() -> UIImage {
-        guard let qrData = UserDefaults.standard.string(forKey: UserDefaultsConstants.QR) else {
-            return UIImage(systemName: "qrcode")!
-        }
-        
-        let data = Data(qrData.utf8)
-        filter.setValue(data, forKey: "inputMessage")
-
-        if let outputImage = filter.outputImage {
-            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
-                return UIImage(cgImage: cgimg)
-            }
-        }
-
-        return UIImage(systemName: "qrcode") ?? UIImage()
-    }
+    var qrCode: UIImage { QrGenerator().generateQRCode() }
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -88,7 +70,7 @@ struct Widget: SwiftUI.Widget {
 
 struct Widget_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetEntryView(entry: SimpleEntry(date: Date(), image: Provider().generateQRCode(), configuration: ConfigurationIntent()))
+        WidgetEntryView(entry: SimpleEntry(date: Date(), image: Provider().qrCode, configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

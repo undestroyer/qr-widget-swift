@@ -17,6 +17,11 @@ class HomeView: UIView {
         return btn
     }()
     
+    fileprivate(set) lazy var qrPreview: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         addSubviews()
@@ -28,10 +33,16 @@ class HomeView: UIView {
     }
     
     func addSubviews() {
+        addSubview(qrPreview)
         addSubview(scanBtn)
     }
     
     func makeConstraints() {
+        qrPreview.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.height.equalTo(qrPreview.snp.width)
+        }
         scanBtn.snp.makeConstraints { make in
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(30)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-30)

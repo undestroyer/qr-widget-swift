@@ -29,6 +29,8 @@
 		E0B6E1E7276F897F0068ED58 /* WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0B6E1D6276F897C0068ED58 /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E0B6E1ED276F9A270068ED58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1EC276F9A270068ED58 /* Constants.swift */; };
 		E0B6E1EE276F9B760068ED58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1EC276F9A270068ED58 /* Constants.swift */; };
+		E0B6E1F1276F9DD70068ED58 /* QrGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */; };
+		E0B6E1F2276F9E310068ED58 /* QrGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,7 @@
 		E0B6E1E0276F897F0068ED58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0B6E1E2276F897F0068ED58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B6E1EC276F9A270068ED58 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +137,7 @@
 		E0B6E180276F79BA0068ED58 = {
 			isa = PBXGroup;
 			children = (
-				E0B6E1EC276F9A270068ED58 /* Constants.swift */,
+				E0B6E1EF276F9DC20068ED58 /* Common */,
 				E0B6E18B276F79BA0068ED58 /* QrWidget */,
 				E0B6E1A2276F79BD0068ED58 /* QrWidgetTests */,
 				E0B6E1AC276F79BE0068ED58 /* QrWidgetUITests */,
@@ -255,6 +258,15 @@
 				E0B6E1E2276F897F0068ED58 /* Info.plist */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		E0B6E1EF276F9DC20068ED58 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1EC276F9A270068ED58 /* Constants.swift */,
+				E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +441,7 @@
 				E0B6E1C0276F7AC10068ED58 /* HomeView.swift in Sources */,
 				E0B6E1E4276F897F0068ED58 /* Widget.intentdefinition in Sources */,
 				E0B6E1C9276F7D330068ED58 /* ScanViewController.swift in Sources */,
+				E0B6E1F1276F9DD70068ED58 /* QrGenerator.swift in Sources */,
 				E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */,
 				E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */,
 				E0B6E1CB276F7D4F0068ED58 /* ScanView.swift in Sources */,
@@ -459,6 +472,7 @@
 			files = (
 				E0B6E1E3276F897F0068ED58 /* Widget.intentdefinition in Sources */,
 				E0B6E1DE276F897C0068ED58 /* Widget.swift in Sources */,
+				E0B6E1F2276F9E310068ED58 /* QrGenerator.swift in Sources */,
 				E0B6E1EE276F9B760068ED58 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class HomeViewController: UIViewController {
 
@@ -27,8 +28,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        customView?.qrPreview.image = QrGenerator().generateQRCode()
         customView?.scanBtn.addTarget(self, action: #selector(onScanBtnTapped), for: .touchUpInside)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .portrait }
+    override var shouldAutorotate: Bool { false }
 
     // MARK: - objc actions
     @objc func onScanBtnTapped() {

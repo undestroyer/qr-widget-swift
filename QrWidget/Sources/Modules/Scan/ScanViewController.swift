@@ -91,7 +91,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
 
     func found(code: String) {
-        print(code)
+        UserDefaults.standard.set(code, forKey: UserDefaultsConstants.QR)
     }
     
     func failed() {
