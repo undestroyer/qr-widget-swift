@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */; };
 		E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */; };
-		E0B6E191276F79BA0068ED58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E190276F79BA0068ED58 /* ViewController.swift */; };
-		E0B6E194276F79BA0068ED58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B6E192276F79BA0068ED58 /* Main.storyboard */; };
+		E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E190276F79BA0068ED58 /* HomeViewController.swift */; };
 		E0B6E196276F79BD0068ED58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B6E195276F79BD0068ED58 /* Assets.xcassets */; };
 		E0B6E199276F79BD0068ED58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B6E197276F79BD0068ED58 /* LaunchScreen.storyboard */; };
 		E0B6E1A4276F79BD0068ED58 /* QrWidgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1A3276F79BD0068ED58 /* QrWidgetTests.swift */; };
 		E0B6E1AE276F79BE0068ED58 /* QrWidgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1AD276F79BE0068ED58 /* QrWidgetUITests.swift */; };
 		E0B6E1B0276F79BE0068ED58 /* QrWidgetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1AF276F79BE0068ED58 /* QrWidgetUITestsLaunchTests.swift */; };
+		E0B6E1C0276F7AC10068ED58 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1BF276F7AC10068ED58 /* HomeView.swift */; };
+		E0B6E1C6276F7CCC0068ED58 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0B6E1C5276F7CCC0068ED58 /* SnapKit */; };
+		E0B6E1C9276F7D330068ED58 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1C8276F7D330068ED58 /* ScanViewController.swift */; };
+		E0B6E1CB276F7D4F0068ED58 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1CA276F7D4F0068ED58 /* ScanView.swift */; };
+		E0B6E1D1276F7DD00068ED58 /* En.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0B6E1D0276F7DD00068ED58 /* En.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +43,7 @@
 		E0B6E189276F79BA0068ED58 /* QrWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0B6E190276F79BA0068ED58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E0B6E193276F79BA0068ED58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0B6E190276F79BA0068ED58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E0B6E195276F79BD0068ED58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0B6E198276F79BD0068ED58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B6E19A276F79BD0068ED58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,10 @@
 		E0B6E1A9276F79BE0068ED58 /* QrWidgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QrWidgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B6E1AD276F79BE0068ED58 /* QrWidgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrWidgetUITests.swift; sourceTree = "<group>"; };
 		E0B6E1AF276F79BE0068ED58 /* QrWidgetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrWidgetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E0B6E1BF276F7AC10068ED58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E0B6E1C8276F7D330068ED58 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		E0B6E1CA276F7D4F0068ED58 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		E0B6E1D0276F7DD00068ED58 /* En.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = En.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B6E1C6276F7CCC0068ED58 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +107,10 @@
 		E0B6E18B276F79BA0068ED58 /* QrWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E0B6E1CC276F7D980068ED58 /* Resources */,
+				E0B6E1BC276F7A5D0068ED58 /* Sources */,
 				E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */,
 				E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */,
-				E0B6E190276F79BA0068ED58 /* ViewController.swift */,
-				E0B6E192276F79BA0068ED58 /* Main.storyboard */,
 				E0B6E195276F79BD0068ED58 /* Assets.xcassets */,
 				E0B6E197276F79BD0068ED58 /* LaunchScreen.storyboard */,
 				E0B6E19A276F79BD0068ED58 /* Info.plist */,
@@ -127,6 +135,57 @@
 			path = QrWidgetUITests;
 			sourceTree = "<group>";
 		};
+		E0B6E1BC276F7A5D0068ED58 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1BD276F7A670068ED58 /* Modules */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E0B6E1BD276F7A670068ED58 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1C7276F7D0C0068ED58 /* Scan */,
+				E0B6E1BE276F7AAB0068ED58 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E0B6E1BE276F7AAB0068ED58 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E190276F79BA0068ED58 /* HomeViewController.swift */,
+				E0B6E1BF276F7AC10068ED58 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E0B6E1C7276F7D0C0068ED58 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1C8276F7D330068ED58 /* ScanViewController.swift */,
+				E0B6E1CA276F7D4F0068ED58 /* ScanView.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		E0B6E1CC276F7D980068ED58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1CD276F7DA20068ED58 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E0B6E1CD276F7DA20068ED58 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1D0276F7DD00068ED58 /* En.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +202,9 @@
 			dependencies = (
 			);
 			name = QrWidget;
+			packageProductDependencies = (
+				E0B6E1C5276F7CCC0068ED58 /* SnapKit */,
+			);
 			productName = QrWidget;
 			productReference = E0B6E189276F79BA0068ED58 /* QrWidget.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +277,9 @@
 				Base,
 			);
 			mainGroup = E0B6E180276F79BA0068ED58;
+			packageReferences = (
+				E0B6E1C4276F7CCC0068ED58 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E0B6E18A276F79BA0068ED58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B6E199276F79BD0068ED58 /* LaunchScreen.storyboard in Resources */,
+				E0B6E1D1276F7DD00068ED58 /* En.strings in Resources */,
 				E0B6E196276F79BD0068ED58 /* Assets.xcassets in Resources */,
-				E0B6E194276F79BA0068ED58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B6E191276F79BA0068ED58 /* ViewController.swift in Sources */,
+				E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */,
+				E0B6E1C0276F7AC10068ED58 /* HomeView.swift in Sources */,
+				E0B6E1C9276F7D330068ED58 /* ScanViewController.swift in Sources */,
 				E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */,
 				E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */,
+				E0B6E1CB276F7D4F0068ED58 /* ScanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +365,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E0B6E192276F79BA0068ED58 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0B6E193276F79BA0068ED58 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E0B6E197276F79BD0068ED58 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +504,7 @@
 				INFOPLIST_FILE = QrWidget/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +532,7 @@
 				INFOPLIST_FILE = QrWidget/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,6 +684,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0B6E1C4276F7CCC0068ED58 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0B6E1C5276F7CCC0068ED58 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0B6E1C4276F7CCC0068ED58 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0B6E181276F79BA0068ED58 /* Project object */;
 }
