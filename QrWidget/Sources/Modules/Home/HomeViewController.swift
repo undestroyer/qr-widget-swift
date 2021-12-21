@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
         
         customView?.qrPreview.image = QrGenerator().generateQRCode()
         customView?.scanBtn.addTarget(self, action: #selector(onScanBtnTapped), for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onNewQrReceived), name: NSNotification.Name(NotificationCenterConstants.newQrScanned), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,5 +47,9 @@ class HomeViewController: UIViewController {
         present(ScanViewController(), animated: true, completion: nil)
     }
 
+    @objc func onNewQrReceived() {
+        self.customView?.qrPreview.image = QrGenerator().generateQRCode()
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
 }
-

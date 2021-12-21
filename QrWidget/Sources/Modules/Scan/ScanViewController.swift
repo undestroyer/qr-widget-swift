@@ -91,10 +91,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
 
     func found(code: String) {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         guard let ud = UserDefaults(suiteName: UserDefaultsConstants.suiteId) else {
             return
         }
         ud.set(code, forKey: UserDefaultsConstants.QR)
+        NotificationCenter.default.post(name: NSNotification.Name(NotificationCenterConstants.newQrScanned), object: nil)
     }
     
     func failed() {
@@ -111,7 +113,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             if let metadataObject = metadataObjects.first {
                 guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
                 guard let stringValue = readableObject.stringValue else { return }
-                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                 found(code: stringValue)
             }
 
