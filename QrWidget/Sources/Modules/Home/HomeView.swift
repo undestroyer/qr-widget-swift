@@ -32,6 +32,11 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        scanBtn.layer.cornerRadius = scanBtn.frame.height / 2
+    }
+    
     func addSubviews() {
         addSubview(qrPreview)
         addSubview(scanBtn)

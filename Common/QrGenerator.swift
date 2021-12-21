@@ -13,7 +13,7 @@ class QrGenerator {
         let context = CIContext()
         let filter = CIFilter.qrCodeGenerator()
         guard let qrData = UserDefaults(suiteName: UserDefaultsConstants.suiteId)?.string(forKey: UserDefaultsConstants.QR) else {
-            return UIImage(systemName: "qrcode")!
+            return UIImage(named: "QR")!
         }
         
         let data = Data(qrData.utf8)
