@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.customView?.qrPreview.image = QrGenerator().generateQRCode()
         WidgetCenter.shared.reloadAllTimelines()
     }
     

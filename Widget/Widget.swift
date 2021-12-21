@@ -21,17 +21,11 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        let entries: [SimpleEntry] = [
+            SimpleEntry(date: Date(), image: qrCode, configuration: configuration)
+        ]
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, image: qrCode, configuration: configuration)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
     
@@ -52,6 +46,7 @@ struct WidgetEntryView : View {
             .resizable()
             .scaledToFit()
             .padding()
+            .cornerRadius(4)
     }
 }
 

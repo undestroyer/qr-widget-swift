@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E06E297E2771F5C00036B297 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E06E29802771F5C00036B297 /* Localizable.strings */; };
 		E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */; };
 		E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */; };
 		E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E190276F79BA0068ED58 /* HomeViewController.swift */; };
@@ -19,7 +20,6 @@
 		E0B6E1C6276F7CCC0068ED58 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0B6E1C5276F7CCC0068ED58 /* SnapKit */; };
 		E0B6E1C9276F7D330068ED58 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1C8276F7D330068ED58 /* ScanViewController.swift */; };
 		E0B6E1CB276F7D4F0068ED58 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1CA276F7D4F0068ED58 /* ScanView.swift */; };
-		E0B6E1D1276F7DD00068ED58 /* En.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0B6E1D0276F7DD00068ED58 /* En.strings */; };
 		E0B6E1D9276F897C0068ED58 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B6E1D8276F897C0068ED58 /* WidgetKit.framework */; };
 		E0B6E1DB276F897C0068ED58 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B6E1DA276F897C0068ED58 /* SwiftUI.framework */; };
 		E0B6E1DE276F897C0068ED58 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1DD276F897C0068ED58 /* Widget.swift */; };
@@ -72,6 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E06E29772771F24A0036B297 /* QrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrWidget.entitlements; sourceTree = "<group>"; };
+		E06E297F2771F5C00036B297 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E06E29812771F5D00036B297 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0B6E189276F79BA0068ED58 /* QrWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +90,6 @@
 		E0B6E1BF276F7AC10068ED58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E0B6E1C8276F7D330068ED58 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		E0B6E1CA276F7D4F0068ED58 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
-		E0B6E1D0276F7DD00068ED58 /* En.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = En.strings; sourceTree = "<group>"; };
 		E0B6E1D6276F897C0068ED58 /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B6E1D8276F897C0068ED58 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E0B6E1DA276F897C0068ED58 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 		E0B6E1E2276F897F0068ED58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B6E1EC276F9A270068ED58 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrGenerator.swift; sourceTree = "<group>"; };
+		E0B6E1F3276FA6400068ED58 /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 		E0B6E180276F79BA0068ED58 = {
 			isa = PBXGroup;
 			children = (
+				E0B6E1F3276FA6400068ED58 /* WidgetExtension.entitlements */,
 				E0B6E1EF276F9DC20068ED58 /* Common */,
 				E0B6E18B276F79BA0068ED58 /* QrWidget */,
 				E0B6E1A2276F79BD0068ED58 /* QrWidgetTests */,
@@ -161,6 +165,7 @@
 		E0B6E18B276F79BA0068ED58 /* QrWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E06E29772771F24A0036B297 /* QrWidget.entitlements */,
 				E0B6E1CC276F7D980068ED58 /* Resources */,
 				E0B6E1BC276F7A5D0068ED58 /* Sources */,
 				E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */,
@@ -235,7 +240,7 @@
 		E0B6E1CD276F7DA20068ED58 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				E0B6E1D0276F7DD00068ED58 /* En.strings */,
+				E06E29802771F5C00036B297 /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = E0B6E180276F79BA0068ED58;
 			packageReferences = (
@@ -403,7 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B6E199276F79BD0068ED58 /* LaunchScreen.storyboard in Resources */,
-				E0B6E1D1276F7DD00068ED58 /* En.strings in Resources */,
+				E06E297E2771F5C00036B297 /* Localizable.strings in Resources */,
 				E0B6E196276F79BD0068ED58 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +504,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E06E29802771F5C00036B297 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E06E297F2771F5C00036B297 /* en */,
+				E06E29812771F5D00036B297 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E0B6E197276F79BD0068ED58 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -513,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -574,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -631,11 +648,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QrWidget/QrWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrWidget/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scanning QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -646,7 +665,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demo.sazonovd.QrWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -660,11 +679,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QrWidget/QrWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrWidget/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scanning QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -675,7 +696,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demo.sazonovd.QrWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -784,6 +805,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BBM883224S;
@@ -797,7 +819,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demo.sazonovd.QrWidget.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -811,6 +833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BBM883224S;
@@ -824,7 +847,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demo.sazonovd.QrWidget.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

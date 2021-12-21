@@ -91,12 +91,15 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
 
     func found(code: String) {
-        UserDefaults.standard.set(code, forKey: UserDefaultsConstants.QR)
+        guard let ud = UserDefaults(suiteName: UserDefaultsConstants.suiteId) else {
+            return
+        }
+        ud.set(code, forKey: UserDefaultsConstants.QR)
     }
     
     func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        let ac = UIAlertController(title: NSLocalizedString("Scanning not supported", comment: "Scanning not supported"), message: NSLocalizedString("Your device does not support scanning a code from an item. Please use a device with a camera.", comment: "Your device does not support scanning a code from an item. Please use a device with a camera."), preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default))
         present(ac, animated: true)
         captureSession = nil
     }

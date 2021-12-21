@@ -12,8 +12,7 @@ class QrGenerator {
     func generateQRCode() -> UIImage {
         let context = CIContext()
         let filter = CIFilter.qrCodeGenerator()
-        
-        guard let qrData = UserDefaults.standard.string(forKey: UserDefaultsConstants.QR) else {
+        guard let qrData = UserDefaults(suiteName: UserDefaultsConstants.suiteId)?.string(forKey: UserDefaultsConstants.QR) else {
             return UIImage(systemName: "qrcode")!
         }
         
@@ -27,7 +26,6 @@ class QrGenerator {
                 return UIImage(cgImage: cgimg)
             }
         }
-
         return UIImage(systemName: "qrcode") ?? UIImage()
     }
 }
