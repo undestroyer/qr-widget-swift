@@ -32,6 +32,7 @@ class HomeView: UIView {
         super.init(frame: frame)
         addSubviews()
         makeConstraints()
+        backgroundColor = UIColor.systemBackground
     }
     
     required init?(coder: NSCoder) {
@@ -61,7 +62,7 @@ class HomeView: UIView {
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-30)
         }
         infoBtn.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.height.equalTo(48)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(8)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-8)
         }

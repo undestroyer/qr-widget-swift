@@ -27,7 +27,7 @@ class ScanView: UIView {
         super.init(frame: frame)
         addSubviews()
         makeConstraints()
-        self.backgroundColor = UIColor.systemBackground
+        self.backgroundColor = UIColor.secondarySystemBackground
     }
     
     required init?(coder: NSCoder) {
