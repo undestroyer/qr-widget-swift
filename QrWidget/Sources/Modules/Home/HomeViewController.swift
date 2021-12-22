@@ -20,6 +20,11 @@ class HomeViewController: UIViewController {
     
     var customView: HomeView? { view as? HomeView }
     
+    override var modalPresentationStyle: UIModalPresentationStyle {
+        get { .fullScreen }
+        set { }
+    }
+    
     override func loadView() {
         let view = HomeView(frame: UIScreen.main.bounds)
         self.view = view
@@ -30,6 +35,7 @@ class HomeViewController: UIViewController {
         
         customView?.qrPreview.image = QrGenerator().generateQRCode()
         customView?.scanBtn.addTarget(self, action: #selector(onScanBtnTapped), for: .touchUpInside)
+        customView?.infoBtn.addTarget(self, action: #selector(onInfoBtnTapped), for: .touchUpInside)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onNewQrReceived), name: NSNotification.Name(NotificationCenterConstants.newQrScanned), object: nil)
     }
@@ -44,7 +50,15 @@ class HomeViewController: UIViewController {
 
     // MARK: - objc actions
     @objc func onScanBtnTapped() {
-        present(ScanViewController(), animated: true, completion: nil)
+        let vc = ScanViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func onInfoBtnTapped() {
+        let vc = AboutViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 
     @objc func onNewQrReceived() {
