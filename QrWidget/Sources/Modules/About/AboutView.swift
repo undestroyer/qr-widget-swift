@@ -12,6 +12,12 @@ import SwiftUI
 
 class AboutView: UIView {
     
+    fileprivate(set) lazy var closeBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "xmark"), for: .normal)
+        return btn
+    }()
+    
     fileprivate(set) lazy var scroll: UIScrollView = {
         let scroll = UIScrollView()
         return scroll
@@ -42,6 +48,7 @@ class AboutView: UIView {
     private func addSubviews() {
         addSubview(scroll)
         addSubview(titleLabel)
+        addSubview(closeBtn)
         scroll.addSubview(labelsStack)
         addLabelsToStack()
     }
@@ -49,8 +56,13 @@ class AboutView: UIView {
     private func makeConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(8)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-8)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
+            make.trailing.equalTo(closeBtn.snp.leading).offset(-10)
+        }
+        closeBtn.snp.makeConstraints { make in
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-8)
+            make.centerY.equalTo(titleLabel.snp.centerY)
+            make.width.height.equalTo(48)
         }
         scroll.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
