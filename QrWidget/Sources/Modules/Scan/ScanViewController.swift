@@ -29,6 +29,10 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     override func viewDidLayoutSubviews() {
         createScannerLayer()
+        guard let customView = customView else {
+            return
+        }
+        customView.closeBtn.addTarget(self, action: #selector(onCloseTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,4 +122,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 
             dismiss(animated: true)
         }
+    
+    @objc func onCloseTapped() {
+        dismiss(animated: true, completion: nil)
+    }
 }
