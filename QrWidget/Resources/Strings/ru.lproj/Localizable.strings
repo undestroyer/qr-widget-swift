@@ -29,3 +29,4 @@
 "A: Try to re-scan your QR or remove and re-add the widget." = "О: Попробуйте повторно отсканировать ваш QR или удалить и снова добавить виджет.";
 "Q: QR in the widget cannot be scanned. What to do?" = "В: QR в виджете не получается отсканировать. Что делать?";
 "A: Try to increase the brightness of your screen, perhaps the current brightness is not enough and the scanning device cannot detect QR." = "О: Попробуйте повысить яркость своего экрана, возможно текущей яркости не хватает и сканирующее устройство не может определить QR.";
+"How it works?" = "Как работает?";

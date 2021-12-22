@@ -13,7 +13,7 @@ class HomeView: UIView {
     fileprivate(set) lazy var scanBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle(NSLocalizedString("Scan QR", comment: "Scan QR"), for: .normal)
-        btn.backgroundColor = UIColor.systemGray
+        btn.backgroundColor = UIColor(named: "Primary")
         return btn
     }()
     
@@ -24,7 +24,8 @@ class HomeView: UIView {
     
     fileprivate(set) lazy var infoBtn: UIButton = {
         let btn = UIButton()
-        btn.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        btn.setTitle(NSLocalizedString("How it works?", comment: "How it works?"), for: .normal)
+        btn.setTitleColor(UIColor(named: "Primary"), for: .normal)
         return btn
     }()
     
@@ -59,12 +60,12 @@ class HomeView: UIView {
         scanBtn.snp.makeConstraints { make in
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(30)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-30)
-            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-30)
+            make.top.equalTo(self.qrPreview.snp.bottom).offset(44)
+            make.height.equalTo(54)
         }
         infoBtn.snp.makeConstraints { make in
-            make.width.height.equalTo(48)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(8)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-8)
+            make.top.equalTo(scanBtn.snp.bottom).offset(30)
+            make.centerX.equalTo(scanBtn.snp.centerX)
         }
     }
 }
