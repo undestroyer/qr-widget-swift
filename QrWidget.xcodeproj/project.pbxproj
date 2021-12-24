@@ -18,6 +18,7 @@
 		E06E299A27748A540036B297 /* SharedUserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299927748A540036B297 /* SharedUserDefaultsService.swift */; };
 		E06E299C2775EF150036B297 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299B2775EF150036B297 /* HomeBuilder.swift */; };
 		E06E299E2775EF480036B297 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299D2775EF480036B297 /* ModuleBuilder.swift */; };
+		E06E299F2775F3080036B297 /* SharedUserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299927748A540036B297 /* SharedUserDefaultsService.swift */; };
 		E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */; };
 		E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */; };
 		E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E190276F79BA0068ED58 /* HomeViewController.swift */; };
@@ -551,6 +552,7 @@
 				E0B6E1E3276F897F0068ED58 /* Widget.intentdefinition in Sources */,
 				E0B6E1DE276F897C0068ED58 /* Widget.swift in Sources */,
 				E0B6E1F2276F9E310068ED58 /* QrGenerator.swift in Sources */,
+				E06E299F2775F3080036B297 /* SharedUserDefaultsService.swift in Sources */,
 				E0B6E1EE276F9B760068ED58 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

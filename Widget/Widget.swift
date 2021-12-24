@@ -29,7 +29,15 @@ struct Provider: IntentTimelineProvider {
         completion(timeline)
     }
     
-    var qrCode: UIImage { UIImage(named: "QR")! }
+    var qrCode: UIImage {
+        let sharedUd = SharedUserDefaultsService()
+        let generator = QrGenerator()
+        let qrContent = sharedUd.getQrContent()
+        guard qrContent != nil else {
+            return UIImage(named: "QR")!
+        }
+        return generator.generateQRCode(content: qrContent!)
+    }
 }
 
 struct SimpleEntry: TimelineEntry {
