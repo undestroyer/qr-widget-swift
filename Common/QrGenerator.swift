@@ -8,15 +8,16 @@
 import UIKit
 import CoreImage.CIFilterBuiltins
 
-class QrGenerator {
-    func generateQRCode() -> UIImage {
+protocol QrGeneratorProtocol {
+    func generateQRCode(content: String) -> UIImage
+}
+
+class QrGenerator: QrGeneratorProtocol {
+    func generateQRCode(content: String) -> UIImage {
         let context = CIContext()
         let filter = CIFilter.qrCodeGenerator()
-        guard let qrData = UserDefaults(suiteName: UserDefaultsConstants.suiteId)?.string(forKey: UserDefaultsConstants.QR) else {
-            return UIImage(named: "QR")!
-        }
         
-        let data = Data(qrData.utf8)
+        let data = Data(content.utf8)
         filter.setValue(data, forKey: "inputMessage")
         
         let transform = CGAffineTransform(scaleX: 5, y: 5)

@@ -10,6 +10,14 @@
 		E06E297E2771F5C00036B297 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E06E29802771F5C00036B297 /* Localizable.strings */; };
 		E06E2984277232B00036B297 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2983277232B00036B297 /* AboutViewController.swift */; };
 		E06E298727734E480036B297 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E298527723AD30036B297 /* AboutView.swift */; };
+		E06E298E277481F50036B297 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E298D277481F50036B297 /* HomeInteractor.swift */; };
+		E06E29902774828B0036B297 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E298F2774828B0036B297 /* HomePresenter.swift */; };
+		E06E2992277483410036B297 /* HomeDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2991277483410036B297 /* HomeDataFlow.swift */; };
+		E06E29952774844D0036B297 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E29942774844D0036B297 /* HomeViewModel.swift */; };
+		E06E29982774899D0036B297 /* HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E29972774899D0036B297 /* HomeProvider.swift */; };
+		E06E299A27748A540036B297 /* SharedUserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299927748A540036B297 /* SharedUserDefaultsService.swift */; };
+		E06E299C2775EF150036B297 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299B2775EF150036B297 /* HomeBuilder.swift */; };
+		E06E299E2775EF480036B297 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E299D2775EF480036B297 /* ModuleBuilder.swift */; };
 		E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */; };
 		E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */; };
 		E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E190276F79BA0068ED58 /* HomeViewController.swift */; };
@@ -79,6 +87,14 @@
 		E06E29812771F5D00036B297 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E06E2983277232B00036B297 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E06E298527723AD30036B297 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		E06E298D277481F50036B297 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		E06E298F2774828B0036B297 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		E06E2991277483410036B297 /* HomeDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataFlow.swift; sourceTree = "<group>"; };
+		E06E29942774844D0036B297 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E06E29972774899D0036B297 /* HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProvider.swift; sourceTree = "<group>"; };
+		E06E299927748A540036B297 /* SharedUserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaultsService.swift; sourceTree = "<group>"; };
+		E06E299B2775EF150036B297 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		E06E299D2775EF480036B297 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		E0B6E189276F79BA0068ED58 /* QrWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +166,30 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		E06E298A2774811C0036B297 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6E1BF276F7AC10068ED58 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E06E29932774843D0036B297 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E06E29942774844D0036B297 /* HomeViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E06E2996277489890036B297 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				E06E29972774899D0036B297 /* HomeProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		E0B6E180276F79BA0068ED58 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				E0B6E1BD276F7A670068ED58 /* Modules */,
+				E06E299D2775EF480036B297 /* ModuleBuilder.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -228,8 +269,14 @@
 		E0B6E1BE276F7AAB0068ED58 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E06E2996277489890036B297 /* Provider */,
+				E06E29932774843D0036B297 /* Model */,
+				E06E298A2774811C0036B297 /* View */,
 				E0B6E190276F79BA0068ED58 /* HomeViewController.swift */,
-				E0B6E1BF276F7AC10068ED58 /* HomeView.swift */,
+				E06E298D277481F50036B297 /* HomeInteractor.swift */,
+				E06E298F2774828B0036B297 /* HomePresenter.swift */,
+				E06E2991277483410036B297 /* HomeDataFlow.swift */,
+				E06E299B2775EF150036B297 /* HomeBuilder.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -284,6 +331,7 @@
 			children = (
 				E0B6E1EC276F9A270068ED58 /* Constants.swift */,
 				E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */,
+				E06E299927748A540036B297 /* SharedUserDefaultsService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -458,15 +506,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */,
+				E06E29982774899D0036B297 /* HomeProvider.swift in Sources */,
 				E0B6E1C0276F7AC10068ED58 /* HomeView.swift in Sources */,
 				E06E298727734E480036B297 /* AboutView.swift in Sources */,
+				E06E298E277481F50036B297 /* HomeInteractor.swift in Sources */,
 				E0B6E1E4276F897F0068ED58 /* Widget.intentdefinition in Sources */,
+				E06E299C2775EF150036B297 /* HomeBuilder.swift in Sources */,
 				E0B6E1C9276F7D330068ED58 /* ScanViewController.swift in Sources */,
+				E06E2992277483410036B297 /* HomeDataFlow.swift in Sources */,
 				E0B6E1F1276F9DD70068ED58 /* QrGenerator.swift in Sources */,
+				E06E299E2775EF480036B297 /* ModuleBuilder.swift in Sources */,
 				E0B6E18D276F79BA0068ED58 /* AppDelegate.swift in Sources */,
 				E0B6E18F276F79BA0068ED58 /* SceneDelegate.swift in Sources */,
+				E06E29902774828B0036B297 /* HomePresenter.swift in Sources */,
 				E0B6E1CB276F7D4F0068ED58 /* ScanView.swift in Sources */,
+				E06E299A27748A540036B297 /* SharedUserDefaultsService.swift in Sources */,
 				E06E2984277232B00036B297 /* AboutViewController.swift in Sources */,
+				E06E29952774844D0036B297 /* HomeViewModel.swift in Sources */,
 				E0B6E1ED276F9A270068ED58 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
