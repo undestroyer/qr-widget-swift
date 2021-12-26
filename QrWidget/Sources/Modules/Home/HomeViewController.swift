@@ -91,7 +91,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
 
     @objc func onNewQrReceived() {
-        
+        interactor.forceQrUpdate(request: Home.ForceQrUpdate.Request())
     }
     
 }

@@ -47,7 +47,10 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             return
         }
         customView.closeBtn.addTarget(self, action: #selector(onCloseTapped), for: .touchUpInside)
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         interactor.startScanner(request: Scan.StartScan.Request())
     }
     
