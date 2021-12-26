@@ -35,3 +35,5 @@
 "Unknown error" = "Неизвестная ошибка";
 "Unknown error occured. Please try restart / reinstall the app. If nothing helps - contact me at undestroyer@gmail.com" = "Произошла неизвестная ошибка. Попробуйте перезапустить / переустановить приложение. Если ошибка повторится - напишите мне на undestroyer@gmail.com";
 "Open Mail app" = "Открыть приложение почты";
+"Configuration" = "Конфигурация";
+"Opens app for scanning new QR" = "Открывает приложение для сканирования нового QR";

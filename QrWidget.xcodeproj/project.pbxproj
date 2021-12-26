@@ -12,6 +12,7 @@
 		E05E5AE32778B52A0025C084 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05E5AE22778B52A0025C084 /* ScanPresenter.swift */; };
 		E05E5AE62778BA450025C084 /* ScanProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05E5AE52778BA450025C084 /* ScanProvider.swift */; };
 		E05E5AE82778C1340025C084 /* ScanBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05E5AE72778C1340025C084 /* ScanBuilder.swift */; };
+		E05E5AEA2778CA4C0025C084 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E06E29802771F5C00036B297 /* Localizable.strings */; };
 		E06E297E2771F5C00036B297 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E06E29802771F5C00036B297 /* Localizable.strings */; };
 		E06E2984277232B00036B297 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2983277232B00036B297 /* AboutViewController.swift */; };
 		E06E298727734E480036B297 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E298527723AD30036B297 /* AboutView.swift */; };
@@ -99,6 +100,7 @@
 		E05E5AE22778B52A0025C084 /* ScanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPresenter.swift; sourceTree = "<group>"; };
 		E05E5AE52778BA450025C084 /* ScanProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProvider.swift; sourceTree = "<group>"; };
 		E05E5AE72778C1340025C084 /* ScanBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBuilder.swift; sourceTree = "<group>"; };
+		E05E5AEB2778CD780025C084 /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
 		E06E29772771F24A0036B297 /* QrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrWidget.entitlements; sourceTree = "<group>"; };
 		E06E297F2771F5C00036B297 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E06E29812771F5D00036B297 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -236,6 +238,8 @@
 		E0B6E180276F79BA0068ED58 = {
 			isa = PBXGroup;
 			children = (
+				E05E5AEB2778CD780025C084 /* PRIVACY.md */,
+				E0B6E1CC276F7D980068ED58 /* Resources */,
 				E05E5ADC2778AFA80025C084 /* LICENSE.md */,
 				E05E5ADB2778ADA30025C084 /* CHANGELOG.md */,
 				E05E5AD62778A66D0025C084 /* MdAssets */,
@@ -266,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				E06E29772771F24A0036B297 /* QrWidget.entitlements */,
-				E0B6E1CC276F7D980068ED58 /* Resources */,
 				E0B6E1BC276F7A5D0068ED58 /* Sources */,
 				E0B6E18C276F79BA0068ED58 /* AppDelegate.swift */,
 				E0B6E18E276F79BA0068ED58 /* SceneDelegate.swift */,
@@ -547,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B6E1E1276F897F0068ED58 /* Assets.xcassets in Resources */,
+				E05E5AEA2778CA4C0025C084 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,7 +784,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QrWidget/QrWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrWidget/Info.plist;
@@ -794,7 +798,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -811,7 +815,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QrWidget/QrWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrWidget/Info.plist;
@@ -825,7 +829,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -937,7 +941,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -948,7 +952,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -965,7 +969,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -976,7 +980,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sazonovd.QrWidget.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
