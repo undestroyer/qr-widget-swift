@@ -83,6 +83,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E05E5AD52778A1370025C084 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E05E5AD72778A69D0025C084 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
+		E05E5AD82778A69D0025C084 /* scanned.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanned.png; sourceTree = "<group>"; };
+		E05E5AD92778A69E0025C084 /* widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = widget.png; sourceTree = "<group>"; };
+		E05E5ADB2778ADA30025C084 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		E05E5ADC2778AFA80025C084 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E06E29772771F24A0036B297 /* QrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrWidget.entitlements; sourceTree = "<group>"; };
 		E06E297F2771F5C00036B297 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E06E29812771F5D00036B297 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -158,6 +164,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E05E5AD62778A66D0025C084 /* MdAssets */ = {
+			isa = PBXGroup;
+			children = (
+				E05E5AD72778A69D0025C084 /* empty.png */,
+				E05E5AD82778A69D0025C084 /* scanned.png */,
+				E05E5AD92778A69E0025C084 /* widget.png */,
+			);
+			path = MdAssets;
+			sourceTree = "<group>";
+		};
 		E06E2982277232980036B297 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +210,10 @@
 		E0B6E180276F79BA0068ED58 = {
 			isa = PBXGroup;
 			children = (
+				E05E5ADC2778AFA80025C084 /* LICENSE.md */,
+				E05E5ADB2778ADA30025C084 /* CHANGELOG.md */,
+				E05E5AD62778A66D0025C084 /* MdAssets */,
+				E05E5AD52778A1370025C084 /* README.md */,
 				E0B6E1F3276FA6400068ED58 /* WidgetExtension.entitlements */,
 				E0B6E1EF276F9DC20068ED58 /* Common */,
 				E0B6E18B276F79BA0068ED58 /* QrWidget */,
