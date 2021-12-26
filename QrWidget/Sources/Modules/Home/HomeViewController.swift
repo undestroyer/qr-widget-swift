@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
     
     func openScanner() {
-        let vc = ScanViewController()
+        let vc = ScanBuilder().build()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
