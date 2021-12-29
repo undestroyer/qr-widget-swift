@@ -31,7 +31,7 @@
 "A: Try to increase the brightness of your screen, perhaps the current brightness is not enough and the scanning device cannot detect QR." = "A: Try to increase the brightness of your screen, perhaps the current brightness is not enough and the scanning device cannot detect QR.";
 "How it works?" = "How it works?";
 "Permission error" = "Permission error";
-"Permission error occured. Please open Settings - Privacy - Camera and check Camera permission." = "Permission error occured. Please open Settings - Privacy - Camera and check Camera permission.";
+"Permission error occured. Please open Settings - Privacy - Camera and check QrWidget permission." = "Permission error occured. Please open Settings - Privacy - Camera and check QrWidget permission.";
 "Unknown error" = "Unknown error";
 "Unknown error occured. Please try restart / reinstall the app. If nothing helps - contact me at undestroyer@gmail.com" = "Unknown error occured. Please try restart / reinstall the app. If nothing helps - contact me at undestroyer@gmail.com";
 "Open Mail app" = "Open Mail app";

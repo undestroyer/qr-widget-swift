@@ -124,7 +124,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func showPermissionInfo() {
         DispatchQueue.main.async {
-            let ac = UIAlertController(title: NSLocalizedString("Permission error", comment: "Permission error"), message: NSLocalizedString("Permission error occured. Please open Settings - Privacy - Qr Widget and check Camera permission.", comment: "Permission error occured. Please open Settings - Privacy - Qr Widget and check Camera permission."), preferredStyle: .alert)
+            let ac = UIAlertController(title: NSLocalizedString("Permission error", comment: "Permission error"), message: NSLocalizedString("Permission error occured. Please open Settings - Privacy - Camera and check QrWidget permission.", comment: "Permission error occured. Please open Settings - Privacy - Camera and check QrWidget permission."), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default))
             self.present(ac, animated: true)
         }

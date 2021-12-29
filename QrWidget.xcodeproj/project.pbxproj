@@ -13,6 +13,7 @@
 		E05E5AE62778BA450025C084 /* ScanProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05E5AE52778BA450025C084 /* ScanProvider.swift */; };
 		E05E5AE82778C1340025C084 /* ScanBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05E5AE72778C1340025C084 /* ScanBuilder.swift */; };
 		E05E5AEA2778CA4C0025C084 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E06E29802771F5C00036B297 /* Localizable.strings */; };
+		E05E5AF1277C6DE00025C084 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E05E5AF3277C6DE00025C084 /* InfoPlist.strings */; };
 		E06E297E2771F5C00036B297 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E06E29802771F5C00036B297 /* Localizable.strings */; };
 		E06E2984277232B00036B297 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2983277232B00036B297 /* AboutViewController.swift */; };
 		E06E298727734E480036B297 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E298527723AD30036B297 /* AboutView.swift */; };
@@ -101,6 +102,8 @@
 		E05E5AE52778BA450025C084 /* ScanProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProvider.swift; sourceTree = "<group>"; };
 		E05E5AE72778C1340025C084 /* ScanBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBuilder.swift; sourceTree = "<group>"; };
 		E05E5AEB2778CD780025C084 /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
+		E05E5AF4277C6DE40025C084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E05E5AF5277C6DFC0025C084 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E06E29772771F24A0036B297 /* QrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrWidget.entitlements; sourceTree = "<group>"; };
 		E06E297F2771F5C00036B297 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E06E29812771F5D00036B297 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -356,6 +359,7 @@
 		E0B6E1CD276F7DA20068ED58 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				E05E5AF3277C6DE00025C084 /* InfoPlist.strings */,
 				E06E29802771F5C00036B297 /* Localizable.strings */,
 			);
 			path = Strings;
@@ -526,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B6E199276F79BD0068ED58 /* LaunchScreen.storyboard in Resources */,
+				E05E5AF1277C6DE00025C084 /* InfoPlist.strings in Resources */,
 				E06E297E2771F5C00036B297 /* Localizable.strings in Resources */,
 				E0B6E196276F79BD0068ED58 /* Assets.xcassets in Resources */,
 			);
@@ -638,6 +643,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E05E5AF3277C6DE00025C084 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E05E5AF4277C6DE40025C084 /* en */,
+				E05E5AF5277C6DFC0025C084 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		E06E29802771F5C00036B297 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

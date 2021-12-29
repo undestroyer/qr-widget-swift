@@ -31,7 +31,7 @@
 "A: Try to increase the brightness of your screen, perhaps the current brightness is not enough and the scanning device cannot detect QR." = "О: Попробуйте повысить яркость своего экрана, возможно текущей яркости не хватает и сканирующее устройство не может определить QR.";
 "How it works?" = "Как работает?";
 "Permission error" = "Доступ запрещен";
-"Permission error occured. Please open Settings - Privacy - Camera and check Camera permission." = "Доступ к камере запрещен. Пожалуйста откройте Настройки - Конфиденциальность - Камера и разрешите доступ к камере.";
+"Permission error occured. Please open Settings - Privacy - Camera and check QrWidget permission." = "Доступ к камере запрещен. Пожалуйста откройте Настройки - Конфиденциальность - Камера и разрешите доступ к камере приложению QrWidget.";
 "Unknown error" = "Неизвестная ошибка";
 "Unknown error occured. Please try restart / reinstall the app. If nothing helps - contact me at undestroyer@gmail.com" = "Произошла неизвестная ошибка. Попробуйте перезапустить / переустановить приложение. Если ошибка повторится - напишите мне на undestroyer@gmail.com";
 "Open Mail app" = "Открыть приложение почты";
