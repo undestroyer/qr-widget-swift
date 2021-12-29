@@ -206,9 +206,30 @@
 		E05E5AEC277B07190025C084 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E05E5AF8277C89BA0025C084 /* Mocks */,
 				E05E5AED277B07330025C084 /* HomeInteractorTests.swift */,
+				E05E5AF6277C89850025C084 /* HomePresenterTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E05E5AF8277C89BA0025C084 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E05E5AF9277C89E80025C084 /* HomeProviderMock.swift */,
+				E05E5AFB277C8A100025C084 /* HomePresentationMock.swift */,
+				E05E5AFD277C8B8F0025C084 /* HomeInteractorMock.swift */,
+				E05E5AFF277C8C5D0025C084 /* HomeViewControllerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E05E5B01277C8D3A0025C084 /* GlobalMocks */ = {
+			isa = PBXGroup;
+			children = (
+				E05E5B02277C8D550025C084 /* QrGeneratorMock.swift */,
+			);
+			path = GlobalMocks;
 			sourceTree = "<group>";
 		};
 		E06E2982277232980036B297 /* About */ = {
@@ -292,6 +313,7 @@
 		E0B6E1A2276F79BD0068ED58 /* QrWidgetTests */ = {
 			isa = PBXGroup;
 			children = (
+				E05E5B01277C8D3A0025C084 /* GlobalMocks */,
 				E05E5AEC277B07190025C084 /* Home */,
 			);
 			path = QrWidgetTests;
@@ -603,7 +625,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E05E5AFC277C8A100025C084 /* HomePresentationMock.swift in Sources */,
+				E05E5AFA277C89E80025C084 /* HomeProviderMock.swift in Sources */,
 				E05E5AEE277B07330025C084 /* HomeInteractorTests.swift in Sources */,
+				E05E5AFE277C8B8F0025C084 /* HomeInteractorMock.swift in Sources */,
+				E05E5AF7277C89850025C084 /* HomePresenterTests.swift in Sources */,
+				E05E5B00277C8C5D0025C084 /* HomeViewControllerMock.swift in Sources */,
+				E05E5B03277C8D550025C084 /* QrGeneratorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

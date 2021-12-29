@@ -13,5 +13,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "HomeInteractorTests.testForceQrUpdateSuccessUseCase():HomeInteractorTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "presenter">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
