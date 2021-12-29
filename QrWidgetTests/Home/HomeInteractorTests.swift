@@ -33,60 +33,65 @@ class HomeInteractorTests: XCTestCase {
         provider.returnValue = someQrContent
         
         sut.fetchQR(request: Home.FetchQr.Request())
-        XCTAssert(presenter.isPresentQrCalled && presenter.isResponseSuccess == true
+        
+        XCTAssert(presenter.isPresentQrCalled
                   && !presenter.isForceUpdateQrCalled
-                  && !presenter.isNavigateCalled)
+                  && !presenter.isNavigateCalled
+                  && presenter.isResponseSuccess == true)
     }
     
     func testFetchQrFailedUseCase() throws {
         let someQrContent: String? = nil
         provider.returnValue = someQrContent
         
-        sut.forceQrUpdate(request: Home.ForceQrUpdate.Request())
-        XCTAssert(presenter.isPresentQrCalled && presenter.isResponseSuccess == false
+        sut.fetchQR(request: Home.FetchQr.Request())
+        
+        XCTAssert(presenter.isPresentQrCalled
                   && !presenter.isForceUpdateQrCalled
-                  && !presenter.isNavigateCalled)
+                  && !presenter.isNavigateCalled
+                  && presenter.isResponseSuccess == false)
     }
     
-
-    class HomePresentationMock: HomePresentationLogic {
-
-        var isResponseSuccess: Bool? = nil
-
-        var isPresentQrCalled = false
-        func presentQr(response: Home.FetchQr.Response) {
-            isPresentQrCalled = true
-            switch (response.result) {
-            case .success:
-                isResponseSuccess = true
-            case .failure:
-                isResponseSuccess = false
-            }
-        }
+    func testForceQrUpdateSuccessUseCase() throws {
+        let someQrContent: String? = "SOME_QR_CONTENT"
+        provider.returnValue = someQrContent
         
-        var isForceUpdateQrCalled = false
-        func forceUpdateQr(response: Home.ForceQrUpdate.Response) {
-            isForceUpdateQrCalled = true
-            switch (response.result) {
-            case .success:
-                isResponseSuccess = true
-            case .failure:
-                isResponseSuccess = false
-            }
-        }
+        sut.forceQrUpdate(request: Home.ForceQrUpdate.Request())
         
-        var isNavigateCalled = false
-        func navigate(response: Home.NavigationDestination) {
-            isNavigateCalled = true
-        }
-        
-        
+        XCTAssert(!presenter.isPresentQrCalled
+                  && presenter.isForceUpdateQrCalled
+                  && !presenter.isNavigateCalled
+                  && presenter.isResponseSuccess == true)
     }
     
-    class HomeProviderMock: HomeProviderProtocol {
-        var returnValue: String? = nil
-        func getQr(completition: @escaping (String?) -> Void) {
-            completition(returnValue)
-        }
+    func testForceQrUpdateFailedUseCase() throws {
+        let someQrContent: String? = nil
+        provider.returnValue = someQrContent
+        
+        sut.forceQrUpdate(request: Home.ForceQrUpdate.Request())
+        
+        XCTAssert(!presenter.isPresentQrCalled
+                  && presenter.isForceUpdateQrCalled
+                  && !presenter.isNavigateCalled
+                  && presenter.isResponseSuccess == false)
+    }
+    
+    
+    func testNavigationToAboutUseCase() throws {
+        sut.openAbout(request: Home.Navigate.RequestAbout())
+        
+        XCTAssert(!presenter.isPresentQrCalled
+                  && !presenter.isForceUpdateQrCalled
+                  && presenter.isNavigateCalled
+                  && presenter.navigationDestination == Home.NavigationDestination.about)
+    }
+    
+    func testNavigationToScannerUseCase() throws {
+        sut.openScanner(request: Home.Navigate.RequestScanner())
+        
+        XCTAssert(!presenter.isPresentQrCalled
+                  && !presenter.isForceUpdateQrCalled
+                  && presenter.isNavigateCalled
+                  && presenter.navigationDestination == Home.NavigationDestination.scanner)
     }
 }
