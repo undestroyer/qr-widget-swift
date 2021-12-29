@@ -19,7 +19,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>An access to camera is needed to scan QR from documents and other devices</string>
 </dict>
 </plist>

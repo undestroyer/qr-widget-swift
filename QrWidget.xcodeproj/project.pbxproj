@@ -798,11 +798,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QrWidget/QrWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrWidget/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Scanning QR codes";
+				INFOPLIST_KEY_NSCameraUsageDescription = "An access to camera is needed to scan QR from documents and other devices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -829,11 +829,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QrWidget/QrWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = BBM883224S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrWidget/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Scanning QR codes";
+				INFOPLIST_KEY_NSCameraUsageDescription = "An access to camera is needed to scan QR from documents and other devices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
