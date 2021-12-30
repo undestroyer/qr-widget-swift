@@ -21,8 +21,8 @@
 "Questions and answers:" = "Вопросы и ответы:";
 "Question: Can the app work with multiple QR codes?" = "Вопрос: Может ли приложение работать с несколькими QR кодами?";
 "Answer: No, the current version of the app only supports 1 QR." = "Ответ: Нет, текущая версия приложения поддерживает только 1 QR.";
-"Q: Can the app recognize QR from the gallery photo?" = "В: Может приложение распознать QR с фотографии из галлереи?";
-"A: No, the current version of the app only recognizes QR from the camera." = "О: Нет, текущая версия приложения распознает QR только с камеры.";
+"Q: Can the app recognize QR from the gallery photo?" = "В: Может приложение распознать QR с фотографии из галереи?";
+"A: Yes, app can detect QR from camera, photos in your gallery and build QR manually with specific content." = "О: Да, приложение может распознать QR с камеры, из изображений в вашей галерее и позволяет вручную создать QR с определенным контентом.";
 "Q: The app does not recognize QR. What to do?" = "В: Приложение не распознает QR. Что делать?";
 "A: There may be a lack of lighting or contrast. If you scan QR from another monitor, glare may be interfering." = "О: Возможно не хватает освещения или контрастности. Если вы сканируете QR с другого монитора - возможно мешают блики.";
 "Q: QR is not displayed in the widget. What to do?" = "В: QR в виджете не отображается. Что делать?";

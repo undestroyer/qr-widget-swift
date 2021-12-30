@@ -22,7 +22,7 @@
 "Question: Can the app work with multiple QR codes?" = "Question: Can the app work with multiple QR codes?";
 "Answer: No, the current version of the app only supports 1 QR." = "Answer: No, the current version of the app only supports 1 QR.";
 "Q: Can the app recognize QR from the gallery photo?" = "Q: Can the app recognize QR from the gallery photo?";
-"A: No, the current version of the app only recognizes QR from the camera." = "A: No, the current version of the app only recognizes QR from the camera.";
+"A: Yes, app can detect QR from camera, photos in your gallery and build QR manually with specific content." = "A: Yes, app can detect QR from camera, photos in your gallery and build QR manually with specific content.";
 "Q: The app does not recognize QR. What to do?" = "Q: The app does not recognize QR. What to do?";
 "A: There may be a lack of lighting or contrast. If you scan QR from another monitor, glare may be interfering." = "A: There may be a lack of lighting or contrast. If you scan QR from another monitor, glare may be interfering.";
 "Q: QR is not displayed in the widget. What to do?" = "Q: QR is not displayed in the widget. What to do?";
