@@ -42,3 +42,5 @@
 "Type QR content manually" = "Type QR content manually";
 "QR not found" = "QR not found";
 "QR was not found on a picked photo. Please pick another photo or use scanner." = "QR was not found on a picked photo. Please pick another photo or use scanner.";
+"Type QR content" = "Type QR content";
+"Cancel" = "Cancel";

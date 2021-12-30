@@ -4,6 +4,7 @@ protocol ScanPresentationLogic {
     func presentStartScanResult(response: Scan.StartScan.Response)
     func presentFouncQrResult(response: Scan.FoundQr.Response)
     func presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response)
+    func presentManualInput(response: Scan.CallManualInput.Response)
 }
 
 class ScanPresenter: ScanPresentationLogic {
@@ -38,5 +39,9 @@ class ScanPresenter: ScanPresentationLogic {
         case .permissionNotGranted:
             viewController?.displayGalleryPermissionRequest()
         }
+    }
+    
+    func presentManualInput(response: Scan.CallManualInput.Response) {
+        viewController?.displayManualInput()
     }
 }

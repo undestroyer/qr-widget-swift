@@ -38,6 +38,11 @@ enum Scan {
         }
     }
     
+    enum CallManualInput {
+        struct Request {}
+        struct Response {}
+    }
+    
     enum StartScanResult {
         case unknownIssue
         case permissionIssue

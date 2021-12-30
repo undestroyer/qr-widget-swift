@@ -5,6 +5,7 @@ protocol ScanBusinessLogic {
     func startScanner(request: Scan.StartScan.Request)
     func foundQr(request: Scan.FoundQr.Request)
     func openGallery(request: Scan.CallPickFromGallery.Request)
+    func openManualInput(request: Scan.CallManualInput.Request)
 }
 
 class ScanInteractor: ScanBusinessLogic {
@@ -56,5 +57,9 @@ class ScanInteractor: ScanBusinessLogic {
             debugPrint("Unknown state")
             presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionForbidden))
         }
+    }
+    
+    func openManualInput(request: Scan.CallManualInput.Request) {
+        presenter.presentManualInput(response: Scan.CallManualInput.Response())
     }
 }

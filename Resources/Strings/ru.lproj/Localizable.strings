@@ -42,3 +42,5 @@
 "Type QR content manually" = "Ввести текст QR вручную";
 "QR not found" = "QR не найден";
 "QR was not found on a picked photo. Please pick another photo or use scanner." = "Не удалось обнаружить QR на выбранной фотографии. Пожалуйста выберите другое фото или используйте сканер.";
+"Type QR content" = "Введите текст QR";
+"Cancel" = "Отмена";

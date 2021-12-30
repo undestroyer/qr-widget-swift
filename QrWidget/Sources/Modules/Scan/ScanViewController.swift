@@ -16,6 +16,7 @@ protocol ScanDisplayLogic: AnyObject {
     func displayGalleryPermissionRequest()
     func displayGalleryPicker()
     func displayGalleryForbiddenAlert()
+    func displayManualInput()
 }
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, ScanDisplayLogic, PHPickerViewControllerDelegate {
@@ -53,6 +54,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         }
         customView.closeBtn.addTarget(self, action: #selector(onCloseTapped), for: .touchUpInside)
         customView.galleryBtn.addTarget(self, action: #selector(onPickFromGalleryTapped), for: .touchUpInside)
+        customView.manualInputBtn.addTarget(self, action: #selector(onManualInputTapped), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -192,6 +194,22 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         }
     }
     
+    
+    func displayManualInput() {
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title: NSLocalizedString("Type QR content", comment: "Type QR content"), message: nil, preferredStyle: .alert)
+            ac.addTextField { textField in
+                textField.placeholder = "QR"
+            }
+            let confirmAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default) { _ in
+                self.interactor.foundQr(request: Scan.FoundQr.Request(payload: ac.textFields?.first?.text ?? ""))
+            }
+            ac.addAction(confirmAction)
+            ac.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel))
+            self.present(ac, animated: true)
+        }
+    }
+    
     // MARK: - AVCaptureMetadataOutputObjectsDelegate
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
             captureSession?.stopRunning()
@@ -253,5 +271,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     @objc func onPickFromGalleryTapped() {
         interactor.openGallery(request: Scan.CallPickFromGallery.Request())
+    }
+    
+    @objc func onManualInputTapped() {
+        interactor.openManualInput(request: Scan.CallManualInput.Request())
     }
 }
