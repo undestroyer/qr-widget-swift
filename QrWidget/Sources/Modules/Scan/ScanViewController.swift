@@ -235,9 +235,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         pickedPhoto.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
             switch (reading, error) {
             case (.none, let .some(e)):
-                debugPrint(e)
+                fatalError(e.localizedDescription)
             case (let .some(data), .none):
-                debugPrint(data)
                 guard let image = CIImage(image: data as! UIImage) else {
                     return
                 }
@@ -259,7 +258,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                     self.dismiss(animated: true)
                 }
             default:
-                debugPrint("Invalid state")
+                fatalError("Invalid state, both optionals are set or both are null in PHPickerViewControllerDelegate")
             }
         }
     }

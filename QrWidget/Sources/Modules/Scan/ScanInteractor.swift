@@ -47,14 +47,12 @@ class ScanInteractor: ScanBusinessLogic {
     func openGallery(request: Scan.CallPickFromGallery.Request) {
         switch PHPhotoLibrary.authorizationStatus(for: .readWrite) {
         case .authorized, .limited:
-            debugPrint("All fine, open picker")
             presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .success))
         case .notDetermined:
             presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionNotGranted))
         case .denied, .restricted:
             presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionForbidden))
         @unknown default:
-            debugPrint("Unknown state")
             presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionForbidden))
         }
     }

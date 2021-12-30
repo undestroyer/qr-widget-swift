@@ -16,7 +16,6 @@ struct SharedUserDefaultsService: SharedUserDefaultsServiceProtocol {
     
     func saveQrContent(_ code: String) {
         guard let sharedUD = sharedUD else {
-            debugPrint("Failed to save QR content in User Defaults")
             return
         }
         
