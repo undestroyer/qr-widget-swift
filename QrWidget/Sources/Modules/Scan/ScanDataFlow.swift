@@ -31,9 +31,22 @@ enum Scan {
         }
     }
     
+    enum CallPickFromGallery {
+        struct Request {}
+        struct Response {
+            var result: CallPickFromGalleryResult
+        }
+    }
+    
     enum StartScanResult {
         case unknownIssue
         case permissionIssue
+        case success
+    }
+    
+    enum CallPickFromGalleryResult {
+        case permissionNotGranted
+        case permissionForbidden
         case success
     }
     

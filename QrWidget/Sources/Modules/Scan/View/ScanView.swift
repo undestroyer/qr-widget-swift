@@ -28,6 +28,20 @@ class ScanView: UIView {
         let view = UIView()
         return view
     }()
+    
+    fileprivate(set) lazy var galleryBtn: UIButton = {
+        let btn = UIButton()
+        btn.setTitle(NSLocalizedString("Pick from a gallery", comment: "Pick from a gallery"), for: .normal)
+        btn.backgroundColor = UIColor(named: "Primary")
+        return btn
+    }()
+    
+    fileprivate(set) lazy var manualInputBtn: UIButton = {
+        let btn = UIButton()
+        btn.setTitle(NSLocalizedString("Type QR content manually", comment: "Type QR content manually"), for: .normal)
+        btn.setTitleColor(UIColor(named: "Primary"), for: .normal)
+        return btn
+    }()
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
@@ -40,10 +54,17 @@ class ScanView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        galleryBtn.layer.cornerRadius = galleryBtn.frame.height / 2
+    }
+    
     private func addSubviews() {
         addSubview(titleLabel)
         addSubview(closeBtn)
         addSubview(scannerContainer)
+        addSubview(galleryBtn)
+        addSubview(manualInputBtn)
     }
     
     private func makeConstraints() {
@@ -62,6 +83,16 @@ class ScanView: UIView {
             make.width.equalTo(scannerContainer.snp.height).priority(.required)
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(30)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-30)
+        }
+        galleryBtn.snp.makeConstraints { make in
+            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(30)
+            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-30)
+            make.top.equalTo(self.scannerContainer.snp.bottom).offset(44)
+            make.height.equalTo(54)
+        }
+        manualInputBtn.snp.makeConstraints { make in
+            make.top.equalTo(galleryBtn.snp.bottom).offset(30)
+            make.centerX.equalTo(galleryBtn.snp.centerX)
         }
     }
 }

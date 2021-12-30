@@ -7,13 +7,18 @@
 
 import AVFoundation
 import UIKit
+import Photos
+import PhotosUI
 
 protocol ScanDisplayLogic: AnyObject {
     func displayStartScanResult(vm: Scan.StartScan.ViewModel)
     func displayFoundScanResult(vm: Scan.FoundQr.ViewModel)
+    func displayGalleryPermissionRequest()
+    func displayGalleryPicker()
+    func displayGalleryForbiddenAlert()
 }
 
-class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, ScanDisplayLogic {
+class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, ScanDisplayLogic, PHPickerViewControllerDelegate {
     
     let interactor: ScanBusinessLogic
     var state: Scan.ViewControllerState
@@ -47,6 +52,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             return
         }
         customView.closeBtn.addTarget(self, action: #selector(onCloseTapped), for: .touchUpInside)
+        customView.galleryBtn.addTarget(self, action: #selector(onPickFromGalleryTapped), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -159,6 +165,33 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         dismiss(animated: true, completion: nil)
     }
     
+    func displayGalleryPermissionRequest() {
+        DispatchQueue.main.async {
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { _ in
+                self.interactor.openGallery(request: Scan.CallPickFromGallery.Request())
+            }
+        }
+    }
+    
+    func displayGalleryPicker() {
+        DispatchQueue.main.async {
+            var configuration = PHPickerConfiguration(photoLibrary: .shared())
+            let newFilter = PHPickerFilter.images
+            configuration.filter = newFilter
+            let pickerController = PHPickerViewController(configuration: configuration)
+            pickerController.delegate = self
+            self.present(pickerController, animated: true, completion: nil)
+        }
+    }
+    
+    func displayGalleryForbiddenAlert() {
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title: NSLocalizedString("Permission error", comment: "Permission error"), message: NSLocalizedString("Permission error occured. Please open Settings - Privacy - Photo and check QrWidget permission.", comment: "Permission error occured. Please open Settings - Privacy - Photo and check QrWidget permission."), preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default))
+            self.present(ac, animated: true)
+        }
+    }
+    
     // MARK: - AVCaptureMetadataOutputObjectsDelegate
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
             captureSession?.stopRunning()
@@ -172,8 +205,53 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             dismiss(animated: true)
         }
     
+    // MARK: - PHPickerViewControllerDelegate
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        guard results.indices.contains(0) else {
+            return // nothing was picked
+        }
+        DispatchQueue.main.async {
+            picker.dismiss(animated: true, completion: nil)
+        }
+        let pickedPhoto = results[0]
+        pickedPhoto.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+            switch (reading, error) {
+            case (.none, let .some(e)):
+                debugPrint(e)
+            case (let .some(data), .none):
+                debugPrint(data)
+                guard let image = CIImage(image: data as! UIImage) else {
+                    return
+                }
+                let detector = CIDetector(ofType: CIDetectorTypeQRCode,
+                                          context: nil,
+                                          options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+                let features = detector?.features(in: image) ?? []
+                let qrs = features.compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+                guard !qrs.isEmpty else {
+                    DispatchQueue.main.async {
+                        let ac = UIAlertController(title: NSLocalizedString("QR not found", comment: "QR not found"), message: NSLocalizedString("QR was not found on a picked photo. Please pick another photo or use scanner.", comment: "QR was not found on a picked photo. Please pick another photo or use scanner."), preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default))
+                        self.present(ac, animated: true)
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.interactor.foundQr(request: Scan.FoundQr.Request(payload: qrs[0]))
+                    self.dismiss(animated: true)
+                }
+            default:
+                debugPrint("Invalid state")
+            }
+        }
+    }
+    
     // MARK: - objc
     @objc func onCloseTapped() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func onPickFromGalleryTapped() {
+        interactor.openGallery(request: Scan.CallPickFromGallery.Request())
     }
 }
