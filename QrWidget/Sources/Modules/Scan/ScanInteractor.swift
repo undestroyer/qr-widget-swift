@@ -1,8 +1,11 @@
 import AVFoundation
+import Photos
 
 protocol ScanBusinessLogic {
     func startScanner(request: Scan.StartScan.Request)
     func foundQr(request: Scan.FoundQr.Request)
+    func openGallery(request: Scan.CallPickFromGallery.Request)
+    func openManualInput(request: Scan.CallManualInput.Request)
 }
 
 class ScanInteractor: ScanBusinessLogic {
@@ -39,5 +42,24 @@ class ScanInteractor: ScanBusinessLogic {
         NotificationCenter.default.post(name: NSNotification.Name(NotificationCenterConstants.newQrScanned), object: nil)
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         presenter.presentFouncQrResult(response: Scan.FoundQr.Response())
+    }
+    
+    func openGallery(request: Scan.CallPickFromGallery.Request) {
+        switch PHPhotoLibrary.authorizationStatus(for: .readWrite) {
+        case .authorized, .limited:
+            debugPrint("All fine, open picker")
+            presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .success))
+        case .notDetermined:
+            presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionNotGranted))
+        case .denied, .restricted:
+            presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionForbidden))
+        @unknown default:
+            debugPrint("Unknown state")
+            presenter.presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response(result: .permissionForbidden))
+        }
+    }
+    
+    func openManualInput(request: Scan.CallManualInput.Request) {
+        presenter.presentManualInput(response: Scan.CallManualInput.Response())
     }
 }

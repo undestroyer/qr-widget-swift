@@ -3,6 +3,8 @@ import Foundation
 protocol ScanPresentationLogic {
     func presentStartScanResult(response: Scan.StartScan.Response)
     func presentFouncQrResult(response: Scan.FoundQr.Response)
+    func presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response)
+    func presentManualInput(response: Scan.CallManualInput.Response)
 }
 
 class ScanPresenter: ScanPresentationLogic {
@@ -26,5 +28,20 @@ class ScanPresenter: ScanPresentationLogic {
     func presentFouncQrResult(response: Scan.FoundQr.Response) {
         let vm = Scan.FoundQr.ViewModel(state: .finished)
         viewController?.displayFoundScanResult(vm: vm)
+    }
+    
+    func presentCallPickFromGalleryResult(response: Scan.CallPickFromGallery.Response) {
+        switch response.result {
+        case .success:
+            viewController?.displayGalleryPicker()
+        case .permissionForbidden:
+            viewController?.displayGalleryForbiddenAlert()
+        case .permissionNotGranted:
+            viewController?.displayGalleryPermissionRequest()
+        }
+    }
+    
+    func presentManualInput(response: Scan.CallManualInput.Response) {
+        viewController?.displayManualInput()
     }
 }

@@ -32,8 +32,15 @@
 "How it works?" = "Как работает?";
 "Permission error" = "Доступ запрещен";
 "Permission error occured. Please open Settings - Privacy - Camera and check QrWidget permission." = "Доступ к камере запрещен. Пожалуйста откройте Настройки - Конфиденциальность - Камера и разрешите доступ к камере приложению QrWidget.";
+"Permission error occured. Please open Settings - Privacy - Photo and check QrWidget permission." = "Доступ к галерее запрещен. Пожалуйста откройте Настройки - Конфиденциальность - Фото и разрешите доступ к галерее приложению QrWidget.";
 "Unknown error" = "Неизвестная ошибка";
 "Unknown error occured. Please try restart / reinstall the app. If nothing helps - contact me at undestroyer@gmail.com" = "Произошла неизвестная ошибка. Попробуйте перезапустить / переустановить приложение. Если ошибка повторится - напишите мне на undestroyer@gmail.com";
 "Open Mail app" = "Открыть приложение почты";
 "Configuration" = "Конфигурация";
 "Opens app for scanning new QR" = "Открывает приложение для сканирования нового QR";
+"Pick from a gallery" = "Выбрать из галереи";
+"Type QR content manually" = "Ввести текст QR вручную";
+"QR not found" = "QR не найден";
+"QR was not found on a picked photo. Please pick another photo or use scanner." = "Не удалось обнаружить QR на выбранной фотографии. Пожалуйста выберите другое фото или используйте сканер.";
+"Type QR content" = "Введите текст QR";
+"Cancel" = "Отмена";

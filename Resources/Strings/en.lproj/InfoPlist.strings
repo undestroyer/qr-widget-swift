@@ -1,1 +1,2 @@
 "NSCameraUsageDescription" = "An access to camera is needed to scan QR from documents and other devices";
+"NSPhotoLibraryUsageDescription" = "An access to photo library is required to scan QR from photos and screenshots";
