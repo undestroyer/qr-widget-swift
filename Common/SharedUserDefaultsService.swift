@@ -5,7 +5,12 @@ protocol SharedUserDefaultsServiceProtocol {
 }
 
 struct SharedUserDefaultsService: SharedUserDefaultsServiceProtocol {
-    private var sharedUD: UserDefaults? { UserDefaults(suiteName: UserDefaultsConstants.suiteId) }
+    
+    init (sharedUD: UserDefaults? = UserDefaults(suiteName: UserDefaultsConstants.suiteId)) {
+        self.sharedUD = sharedUD
+    }
+    
+    private var sharedUD: UserDefaults?
     
     func getQrContent() -> String? {
         guard let sharedUD = sharedUD else {
