@@ -23,17 +23,22 @@ class HomePresenter: HomePresentationLogic {
             )
             viewController?.displayQr(viewModel: vm)
         case let .success(qrs):
-            let vm = Home.FetchQr.ViewModel(
-                state: Home.ViewControllerState.result(
-                    HomeViewModel(
-                        qrs: qrs.map { HomeQrViewModel(
-                            id: $0.id,
-                            image: qrGenerator.generateQRCode(content: $0.content),
-                            name: $0.name)}
+            if qrs.isEmpty {
+                let vm = Home.FetchQr.ViewModel(state: Home.ViewControllerState.empty)
+                viewController?.displayQr(viewModel: vm)
+            } else {
+                let vm = Home.FetchQr.ViewModel(
+                    state: Home.ViewControllerState.result(
+                        HomeViewModel(
+                            qrs: qrs.map { HomeQrViewModel(
+                                id: $0.id,
+                                image: qrGenerator.generateQRCode(content: $0.content),
+                                name: $0.name) }
+                        )
                     )
                 )
-            )
-            viewController?.displayQr(viewModel: vm)
+                viewController?.displayQr(viewModel: vm)
+            }
         }
     }
     
@@ -44,18 +49,23 @@ class HomePresenter: HomePresentationLogic {
                 state: Home.ViewControllerState.empty
             )
             viewController?.forceQrUpdate(viewModel: vm)
-        case let .success(qrContent):
-            let vm = Home.ForceQrUpdate.ViewModel(
-                state: Home.ViewControllerState.result(
-                    HomeViewModel(
-                        qrs: qrContent.map { HomeQrViewModel(
-                            id: $0.id,
-                            image: qrGenerator.generateQRCode(content: $0.content),
-                            name: $0.name) }
+        case let .success(qrs):
+            if qrs.isEmpty {
+                let vm = Home.ForceQrUpdate.ViewModel(state: Home.ViewControllerState.empty)
+                viewController?.forceQrUpdate(viewModel: vm)
+            } else {
+                let vm = Home.ForceQrUpdate.ViewModel(
+                    state: Home.ViewControllerState.result(
+                        HomeViewModel(
+                            qrs: qrs.map { HomeQrViewModel(
+                                id: $0.id,
+                                image: qrGenerator.generateQRCode(content: $0.content),
+                                name: $0.name) }
+                        )
                     )
                 )
-            )
-            viewController?.forceQrUpdate(viewModel: vm)
+                viewController?.forceQrUpdate(viewModel: vm)
+            }
         }
     }
     
