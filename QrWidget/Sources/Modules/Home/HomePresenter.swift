@@ -27,9 +27,9 @@ class HomePresenter: HomePresentationLogic {
                 state: Home.ViewControllerState.result(
                     HomeViewModel(
                         qrs: qrs.map { HomeQrViewModel(
-                            id: "1",
-                            image: qrGenerator.generateQRCode(content: $0),
-                            name: "Demo")}
+                            id: $0.id,
+                            image: qrGenerator.generateQRCode(content: $0.content),
+                            name: $0.name)}
                     )
                 )
             )
@@ -49,9 +49,9 @@ class HomePresenter: HomePresentationLogic {
                 state: Home.ViewControllerState.result(
                     HomeViewModel(
                         qrs: qrContent.map { HomeQrViewModel(
-                            id: "1",
-                            image: qrGenerator.generateQRCode(content: $0),
-                            name: "Demo") }
+                            id: $0.id,
+                            image: qrGenerator.generateQRCode(content: $0.content),
+                            name: $0.name) }
                     )
                 )
             )

@@ -58,6 +58,8 @@
 		E0C905A12782EFA30088B980 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C905A02782EFA30088B980 /* UserDefaultsMock.swift */; };
 		E0C905A42782F17E0088B980 /* SharedUserDefaultsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C905A32782F17E0088B980 /* SharedUserDefaultsServiceTests.swift */; };
 		E0DB44F627A05D14006EFE66 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB44F527A05D14006EFE66 /* HomeCollectionViewCell.swift */; };
+		E0DB44F927A173B5006EFE66 /* QrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB44F827A173B5006EFE66 /* QrModel.swift */; };
+		E0DB44FA27A1752C006EFE66 /* QrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB44F827A173B5006EFE66 /* QrModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,7 @@
 		E0C905A02782EFA30088B980 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		E0C905A32782F17E0088B980 /* SharedUserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaultsServiceTests.swift; sourceTree = "<group>"; };
 		E0DB44F527A05D14006EFE66 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0DB44F827A173B5006EFE66 /* QrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +442,7 @@
 		E0B6E1EF276F9DC20068ED58 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E0DB44F727A173A2006EFE66 /* Models */,
 				E0B6E1EC276F9A270068ED58 /* Constants.swift */,
 				E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */,
 				E06E299927748A540036B297 /* SharedUserDefaultsService.swift */,
@@ -452,6 +456,14 @@
 				E0C905A32782F17E0088B980 /* SharedUserDefaultsServiceTests.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E0DB44F727A173A2006EFE66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0DB44F827A173B5006EFE66 /* QrModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DB44F927A173B5006EFE66 /* QrModel.swift in Sources */,
 				E0B6E191276F79BA0068ED58 /* HomeViewController.swift in Sources */,
 				E05E5AE32778B52A0025C084 /* ScanPresenter.swift in Sources */,
 				E06E29982774899D0036B297 /* HomeProvider.swift in Sources */,
@@ -682,6 +695,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DB44FA27A1752C006EFE66 /* QrModel.swift in Sources */,
 				E0B6E1E3276F897F0068ED58 /* Widget.intentdefinition in Sources */,
 				E0B6E1DE276F897C0068ED58 /* Widget.swift in Sources */,
 				E0B6E1F2276F9E310068ED58 /* QrGenerator.swift in Sources */,

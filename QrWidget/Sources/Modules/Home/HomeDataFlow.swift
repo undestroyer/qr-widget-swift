@@ -38,12 +38,12 @@ enum Home {
 
     enum FetchQrResult {
         case failure
-        case success([String])
+        case success([QrModel])
     }
     
     enum ForceQrUpdateResult {
         case failure
-        case success([String])
+        case success([QrModel])
     }
 
     enum ViewControllerState {
