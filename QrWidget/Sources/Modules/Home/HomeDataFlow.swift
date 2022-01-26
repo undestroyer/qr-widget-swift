@@ -38,17 +38,27 @@ enum Home {
 
     enum FetchQrResult {
         case failure
-        case success(String)
+        case success([String])
     }
     
     enum ForceQrUpdateResult {
         case failure
-        case success(String)
+        case success([String])
     }
 
     enum ViewControllerState {
         case loading
+        case empty
         case result(HomeViewModel)
+        
+        func qrViewModels() -> [HomeQrViewModel] {
+            switch self {
+            case let .result(vm):
+                return vm.qrs
+            default:
+                return []
+            }
+        }
     }
     
     enum NavigationDestination {

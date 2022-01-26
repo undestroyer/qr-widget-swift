@@ -57,6 +57,7 @@
 		E0B6E1F2276F9E310068ED58 /* QrGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B6E1F0276F9DD60068ED58 /* QrGenerator.swift */; };
 		E0C905A12782EFA30088B980 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C905A02782EFA30088B980 /* UserDefaultsMock.swift */; };
 		E0C905A42782F17E0088B980 /* SharedUserDefaultsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C905A32782F17E0088B980 /* SharedUserDefaultsServiceTests.swift */; };
+		E0DB44F627A05D14006EFE66 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB44F527A05D14006EFE66 /* HomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		E0B6E1F3276FA6400068ED58 /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
 		E0C905A02782EFA30088B980 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		E0C905A32782F17E0088B980 /* SharedUserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaultsServiceTests.swift; sourceTree = "<group>"; };
+		E0DB44F527A05D14006EFE66 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				E0B6E1BF276F7AC10068ED58 /* HomeView.swift */,
+				E0DB44F527A05D14006EFE66 /* HomeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				E06E29902774828B0036B297 /* HomePresenter.swift in Sources */,
 				E0B6E1CB276F7D4F0068ED58 /* ScanView.swift in Sources */,
 				E06E299A27748A540036B297 /* SharedUserDefaultsService.swift in Sources */,
+				E0DB44F627A05D14006EFE66 /* HomeCollectionViewCell.swift in Sources */,
 				E05E5ADF2778B2A60025C084 /* ScanDataFlow.swift in Sources */,
 				E06E2984277232B00036B297 /* AboutViewController.swift in Sources */,
 				E06E29952774844D0036B297 /* HomeViewModel.swift in Sources */,

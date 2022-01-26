@@ -20,10 +20,6 @@ class HomeInteractor: HomeBusinessLogic {
 
     func forceQrUpdate(request: Home.ForceQrUpdate.Request) {
         provider.getQr { qrContent in
-            guard let qrContent = qrContent else {
-                self.presenter.forceUpdateQr(response: Home.ForceQrUpdate.Response(result: .failure))
-                return
-            }
             self.presenter.forceUpdateQr(response: Home.ForceQrUpdate.Response(result: .success(qrContent)))
         }
         WidgetCenter.shared.reloadAllTimelines()
@@ -31,10 +27,6 @@ class HomeInteractor: HomeBusinessLogic {
     
     func fetchQR(request: Home.FetchQr.Request) {
         provider.getQr { qrContent in
-            guard let qrContent = qrContent else {
-                self.presenter.presentQr(response: Home.FetchQr.Response(result: Home.FetchQrResult.failure))
-                return
-            }
             self.presenter.presentQr(response: Home.FetchQr.Response(result: Home.FetchQrResult.success(qrContent)))
         }
     }

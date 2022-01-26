@@ -1,5 +1,5 @@
 protocol HomeProviderProtocol {
-    func getQr(completition: @escaping (String?) -> Void)
+    func getQr(completition: @escaping ([String]) -> Void)
 }
 
 struct HomeProvider: HomeProviderProtocol {
@@ -8,7 +8,7 @@ struct HomeProvider: HomeProviderProtocol {
         self.dataStore = dataStore
     }
     
-    func getQr(completition: @escaping (String?) -> Void) {
-        completition(dataStore.getQrContent())
+    func getQr(completition: @escaping ([String]) -> Void) {
+        completition(dataStore.getQrs())
     }
 }

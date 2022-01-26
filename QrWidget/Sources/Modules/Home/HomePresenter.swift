@@ -19,22 +19,17 @@ class HomePresenter: HomePresentationLogic {
         switch response.result {
         case .failure:
             let vm = Home.FetchQr.ViewModel(
-                state: Home.ViewControllerState.result(
-                    HomeViewModel(
-                        image: UIImage(systemName: "qrcode")!,
-                        isPlaceholder: false
-                    )
-                )
+                state: Home.ViewControllerState.empty
             )
             viewController?.displayQr(viewModel: vm)
-        case let .success(qrContent):
+        case let .success(qrs):
             let vm = Home.FetchQr.ViewModel(
                 state: Home.ViewControllerState.result(
                     HomeViewModel(
-                        image: qrGenerator.generateQRCode(
-                            content: qrContent
-                        ),
-                        isPlaceholder: false
+                        qrs: qrs.map { HomeQrViewModel(
+                            id: "1",
+                            image: qrGenerator.generateQRCode(content: $0),
+                            name: "Demo")}
                     )
                 )
             )
@@ -46,22 +41,17 @@ class HomePresenter: HomePresentationLogic {
         switch response.result {
         case .failure:
             let vm = Home.ForceQrUpdate.ViewModel(
-                state: Home.ViewControllerState.result(
-                    HomeViewModel(
-                        image: UIImage(systemName: "qrcode")!,
-                        isPlaceholder: false
-                    )
-                )
+                state: Home.ViewControllerState.empty
             )
             viewController?.forceQrUpdate(viewModel: vm)
         case let .success(qrContent):
             let vm = Home.ForceQrUpdate.ViewModel(
                 state: Home.ViewControllerState.result(
                     HomeViewModel(
-                        image: qrGenerator.generateQRCode(
-                            content: qrContent
-                        ),
-                        isPlaceholder: false
+                        qrs: qrContent.map { HomeQrViewModel(
+                            id: "1",
+                            image: qrGenerator.generateQRCode(content: $0),
+                            name: "Demo") }
                     )
                 )
             )
