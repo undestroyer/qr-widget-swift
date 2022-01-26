@@ -15,6 +15,7 @@ protocol HomeDisplayLogic: AnyObject {
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
+    let cellReuseId = "CELL_REUSE_ID"
     let interactor: HomeBusinessLogic
     var state: Home.ViewControllerState
     
@@ -40,12 +41,16 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customView?.scanBtn.addTarget(self, action: #selector(onScanBtnTapped), for: .touchUpInside)
-        customView?.infoBtn.addTarget(self, action: #selector(onInfoBtnTapped), for: .touchUpInside)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(onNewQrReceived), name: NSNotification.Name(NotificationCenterConstants.newQrScanned), object: nil)
         
         interactor.fetchQR(request: Home.FetchQr.Request())
+        
+        customView?.collectionView.dataSource = self
+        customView?.collectionView.delegate = self
+        customView?.collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseId)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(onInfoBtnTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus.viewfinder"), style: .plain, target: self, action: #selector(onScanBtnTapped))
     }
 
     func displayQr(viewModel: Home.FetchQr.ViewModel) {
@@ -61,11 +66,14 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     private func displayState() {
         switch state {
         case .loading:
-            customView?.qrPreview.isHidden = true
-        case let .result(vm):
-            customView?.qrPreview.isHidden = false
-            customView?.qrPreview.image = vm.image
-            customView?.qrPreview.tintColor = vm.isPlaceholder ? UIColor.systemBlue : nil
+            customView?.collectionView.isHidden = true
+        case .empty:
+            customView?.collectionView.isHidden = true
+            customView?.noQrsLabel.isHidden = false
+        case .result:
+            customView?.noQrsLabel.isHidden = true
+            customView?.collectionView.isHidden = false
+            customView?.collectionView.reloadData()
         }
     }
     
@@ -94,4 +102,37 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         interactor.forceQrUpdate(request: Home.ForceQrUpdate.Request())
     }
     
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        16
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        state.qrViewModels().count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath)
+        guard let castedCell = cell as? HomeCollectionViewProtocol else {
+            return cell
+        }
+        let data = state.qrViewModels()
+        if data.indices.contains(indexPath.row) {
+            castedCell.setData(HomeCollectionViewCellViewModel(
+                qrPreview: data[indexPath.row].image,
+                name: data[indexPath.row].name))
+        }
+        return castedCell
+    }
 }

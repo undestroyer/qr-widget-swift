@@ -1,6 +1,7 @@
 import Foundation
+
 protocol SharedUserDefaultsServiceProtocol {
-    func getQrContent() -> String?
+    func getQrs() -> [QrModel]
     func saveQrContent(_ content: String)
 }
 
@@ -12,11 +13,12 @@ struct SharedUserDefaultsService: SharedUserDefaultsServiceProtocol {
     
     private var sharedUD: UserDefaults?
     
-    func getQrContent() -> String? {
-        guard let sharedUD = sharedUD else {
-            return nil
+    func getQrs() -> [QrModel] {
+        guard let sharedUD = sharedUD,
+                let qrContent = sharedUD.string(forKey: UserDefaultsConstants.QR) else {
+            return []
         }
-        return sharedUD.string(forKey: UserDefaultsConstants.QR)
+        return [QrModel(id: "1", name: "Demo name", content: qrContent)]
     }
     
     func saveQrContent(_ code: String) {

@@ -10,23 +10,23 @@ import UIKit
 
 class HomeView: UIView {
     
-    fileprivate(set) lazy var scanBtn: UIButton = {
-        let btn = UIButton()
-        btn.setTitle(NSLocalizedString("Scan QR", comment: "Scan QR"), for: .normal)
-        btn.backgroundColor = UIColor(named: "Primary")
-        return btn
+    fileprivate(set) lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.scrollDirection = .vertical
+        
+        
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
+        return collectionView
     }()
     
-    fileprivate(set) lazy var qrPreview: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
-    
-    fileprivate(set) lazy var infoBtn: UIButton = {
-        let btn = UIButton()
-        btn.setTitle(NSLocalizedString("How it works?", comment: "How it works?"), for: .normal)
-        btn.setTitleColor(UIColor(named: "Primary"), for: .normal)
-        return btn
+    fileprivate(set) lazy var noQrsLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = "No QRs yet. Use add button above to scan or create QR"
+        return label
     }()
     
     override init(frame: CGRect = CGRect.zero) {
@@ -42,30 +42,20 @@ class HomeView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        scanBtn.layer.cornerRadius = scanBtn.frame.height / 2
     }
     
     func addSubviews() {
-        addSubview(qrPreview)
-        addSubview(scanBtn)
-        addSubview(infoBtn)
+        addSubview(collectionView)
+        addSubview(noQrsLabel)
     }
     
     func makeConstraints() {
-        qrPreview.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(qrPreview.snp.width)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(safeAreaLayoutGuide.snp.edges)
         }
-        scanBtn.snp.makeConstraints { make in
-            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(30)
-            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-30)
-            make.top.equalTo(self.qrPreview.snp.bottom).offset(44)
-            make.height.equalTo(54)
-        }
-        infoBtn.snp.makeConstraints { make in
-            make.top.equalTo(scanBtn.snp.bottom).offset(30)
-            make.centerX.equalTo(scanBtn.snp.centerX)
+        noQrsLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
     }
 }
