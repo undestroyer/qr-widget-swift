@@ -3,12 +3,12 @@ protocol HomeProviderProtocol {
 }
 
 struct HomeProvider: HomeProviderProtocol {
-    private let dataStore: SharedUserDefaultsServiceProtocol
-    init (dataStore: SharedUserDefaultsServiceProtocol = SharedUserDefaultsService()) {
+    private let dataStore: CoreDataServiceProtocol
+    init (dataStore: CoreDataServiceProtocol = CoreDataService.shared) {
         self.dataStore = dataStore
     }
     
     func getQr(completition: @escaping ([QrModel]) -> Void) {
-        completition(dataStore.getQrs())
+        completition(dataStore.fetchQrCodes())
     }
 }

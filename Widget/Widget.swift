@@ -30,13 +30,13 @@ struct Provider: IntentTimelineProvider {
     }
     
     var qrCode: UIImage {
-        let sharedUd = SharedUserDefaultsService()
+        let storage = CoreDataService()
+        let lastQr = storage.fetchQrCodes().last
         let generator = QrGenerator()
-        let qrContent = "" as String?
-        guard qrContent != nil else {
+        guard let qrContent = lastQr?.content else {
             return UIImage(named: "QR")!
         }
-        return generator.generateQRCode(content: qrContent!)
+        return generator.generateQRCode(content: qrContent)
     }
 }
 

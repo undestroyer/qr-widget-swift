@@ -1,16 +1,17 @@
+import Foundation
 protocol ScanProviderProtocol {
     func saveQr(content: String)
 }
 
 struct ScanProvider: ScanProviderProtocol {
     
-    private let dataStore: SharedUserDefaultsServiceProtocol
+    private let dataStore: CoreDataServiceProtocol
     
-    init (dataStore: SharedUserDefaultsServiceProtocol = SharedUserDefaultsService()) {
+    init (dataStore: CoreDataServiceProtocol = CoreDataService.shared) {
         self.dataStore = dataStore
     }
     
     func saveQr(content: String) {
-        dataStore.saveQrContent(content)
+        dataStore.insertQrCode(QrModel(id: "", name: "Qr code", content: content))
     }
 }
