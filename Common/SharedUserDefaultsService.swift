@@ -29,5 +29,10 @@ struct SharedUserDefaultsService: SharedUserDefaultsServiceProtocol {
         sharedUD.set(code, forKey: UserDefaultsConstants.QR)
     }
     
-    
+    func removeQR() {
+        guard let sharedUD = sharedUD else {
+            return
+        }
+        sharedUD.removeObject(forKey: UserDefaultsConstants.QR)
+    }
 }
